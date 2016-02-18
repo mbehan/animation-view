@@ -189,6 +189,10 @@
     [displayLink invalidate];
     displayLink = nil;
     
+    if (animationRepeatCount == 1) {
+        animationData = nil;
+    }
+    
     //rest on final frame
 	currentFrame = animationNumFrames - 1;
 	[self animationShowFrame: currentFrame];
