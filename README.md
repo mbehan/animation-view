@@ -51,11 +51,11 @@ Starting off with small numbers of frames it's not looking too good for our new 
 <table class="tftable" border="1"><tr><th>10 Frames</th><th>Memory Average / Peak</th><th>CPU Average / Peak</th></tr><tr><td>UIImageView</td><td>4.1MB / 4.1MB    </td><td>0% / 1% </td></tr><tr><td>MBAnimationView</td><td>4.6MB / 4.6MB</td><td>11% / 11%</td></tr></table><table class="tftable" border="1"><tr><th>20 Frames</th><th>Memory Average / Peak</th><th>CPU Average / Peak</th></tr><tr><td>UIImageView</td><td>4.4MB / 4.4MB    </td><td>0% / 1% </td></tr><tr><td>MBAnimationView</td><td>4.9MB / 4.9MB</td><td>11% / 11%</td></tr></table>
 
 
-But things start looking up for us as more frames are added. _MBAnimationView_ continues to use the same amount of CPU–memory usage is creeping up, but there are no spikes. `UIImageView` however is seeing some very large spikes during setup (highlighted in red). 
+But things start looking up for us as more frames are added. _MBAnimationView_ continues to use the same amount of CPU–memory usage is creeping up, but there are no spikes. `UIImageView` however is seeing some very large spikes during setup. 
 
 <table class="tftable" border="1"><tr><th>40 Frames</th><th>Memory Average / Peak</th><th>CPU Average / Peak</th></tr><tr><td>UIImageView</td><td>4.1MB / <span style="color:red">65MB</span>    </td><td>0% / 8% </td></tr><tr><td>MBAnimationView</td><td>5.7MB / 5.7MB</td><td>11% / 11%</td></tr></table><table class="tftable" border="1"><tr><th>80 Frames</th><th>Memory Average / Peak</th><th>CPU Average / Peak</th></tr><tr><td>UIImageView</td><td>4.5MB / <span style="color:red">119MB</span>    </td><td>0% / <span style="color:red">72%</span> </td></tr><tr><td>MBAnimationView</td><td>8.4MB / 8.4MB</td><td>11% / 11%</td></tr></table>
 
-Those red memory numbers are big enough to start crashing in a lot of situations, and remember this is for a single animation.
+Those `UIImageView` memory numbers are big enough to start crashing in a lot of situations, and remember this is for a single animation.
 
 ## The Trade Off
 
